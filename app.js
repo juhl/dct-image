@@ -134,13 +134,13 @@ function fdct(src, dst, width, height) {
                     }
 
                     var uk = (k == 0 ? 1 : 2) / BLOCK_SIZE;
-                    acc[0] = acc[0] * uk + 128;
-                    acc[1] = acc[1] * uk + 128;
-                    acc[2] = acc[2] * uk + 128;
+                    acc[0] = acc[0] * uk;
+                    acc[1] = acc[1] * uk;
+                    acc[2] = acc[2] * uk;
 
-                    dst[dst_offset + 0] = acc[0];
-                    dst[dst_offset + 1] = acc[1];
-                    dst[dst_offset + 2] = acc[2];
+                    dst[dst_offset + 0] = acc[0] + 128;
+                    dst[dst_offset + 1] = acc[1] + 128;
+                    dst[dst_offset + 2] = acc[2] + 128;
                     dst[dst_offset + 3] = 255;
                 }
             }
@@ -184,13 +184,9 @@ function idct(src, dst, width, height, num_coeff) {
                         acc[2] += temp[src_offset + 2] * dct_matrix[x][k];
                     }
 
-                    acc[0] += 128;
-                    acc[1] += 128;
-                    acc[2] += 128;
-
-                    dst[dst_offset + 0] = acc[0];
-                    dst[dst_offset + 1] = acc[1];
-                    dst[dst_offset + 2] = acc[2];
+                    dst[dst_offset + 0] = acc[0] + 128;
+                    dst[dst_offset + 1] = acc[1] + 128;
+                    dst[dst_offset + 2] = acc[2] + 128;
                     dst[dst_offset + 3] = 255;
                 }
             }
