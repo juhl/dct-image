@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="Author" content="Ju-Hyung Lee, jufoot@gmail.com">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>DCT</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <p>8x8 block DCT</p>
+    </header>
+    <div id="content">
+      <div id="screen">
+        <div style="display: inline-block; vertical-align: top;">
+          <canvas width="256" height="256" id="canvas_input"></canvas>
+          <div>
+            image
+            <select name="Image" onchange="App.onchanged_image(this.options[this.selectedIndex].value);">
+              <option selected value="cat-256.png">cat
+              <option value="frog-256.png">frog
+              <option value="lena-256.png">lena
+              <option value="patt-256.png">patt
+            </select>
+          </div>
+        </div>
+        <div style="display: inline-block; vertical-align: top;">
+          <canvas width="256" height="256" id="canvas_intermediate"></canvas>
+        </div>
+        <div style="display: inline-block; vertical-align: top;">
+          <canvas width="256" height="256" id="canvas_output"></canvas>
+          <div>
+            coefficents
+            <select name="Coefficients" onchange="App.onchanged_coefficients(this.options[this.selectedIndex].value);">
+              <option selected value="8">8
+              <option value="4">4
+              <option value="2">2
+              <option value="1">1
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript">App.main();</script>
+</body>
+</html>
