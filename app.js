@@ -11,11 +11,11 @@ var dct_matrix = [];
 function main() {
     init_dct_matrix(BLOCK_SIZE);
 
-	canvas[0] = document.getElementById("canvas_input");
+    canvas[0] = document.getElementById("canvas_input");
     canvas[1] = document.getElementById("canvas_intermediate");
     canvas[2] = document.getElementById("canvas_output");
 
-	ctx[0] = canvas[0].getContext("2d");
+    ctx[0] = canvas[0].getContext("2d");
     ctx[1] = canvas[1].getContext("2d");
     ctx[2] = canvas[2].getContext("2d");
 
